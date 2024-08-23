@@ -1,7 +1,6 @@
 import React from "react";
 import Tilt from "react-tilt";
 import { motion } from "framer-motion";
-
 import { styles } from "../styles";
 import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
@@ -12,6 +11,7 @@ const ProjectCard = ({
   index,
   name,
   description,
+  deployment,
   tags,
   image,
   source_code_link,
@@ -26,8 +26,8 @@ const ProjectCard = ({
         }}
         className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full'
       >
-        <div className='relative w-full h-[230px]'>
-          <img
+        <div className='relative w-full h-[230px] hover: cursor-pointer'>
+          <img 
             src={image}
             alt='project_image'
             className='w-full h-full object-cover rounded-2xl'
@@ -49,7 +49,8 @@ const ProjectCard = ({
 
         <div className='mt-5'>
           <h3 className='text-white font-bold text-[24px]'>{name}</h3>
-          <p className='mt-2 text-secondary text-[14px]'>{description}</p>
+          <p className='mt-2 text-secondary text-[14px]'>{description} </p>
+        
         </div>
 
         <div className='mt-4 flex flex-wrap gap-2'>
